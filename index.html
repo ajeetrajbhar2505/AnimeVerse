@@ -97,74 +97,7 @@
 
 			<!-- Posts List -->
 			<section>
-				<ul class="posts">
-					<li>
-						<article>
-							<header>
-								<h3><a href="single.html">What If The Otsutsukis Returned During Naruto's Blank Period ?
-										|| P1
-									</a></h3>
-								<time class="published" datetime="2015-10-20">October 20, 2015</time>
-							</header>
-							<a href="single.html" class="image posts">
-								<iframe id="iframe" src="EX9gXUfG12k"
-									aria-disabled="true" frameborder="0" allowfullscreen></iframe>
-							</a>
-						</article>
-					</li>
-					<li>
-						<article>
-							<header>
-								<h3><a href="single.html">What if Luffy and Nami Feel Something at Their Two Year
-										Reunion ? || P1
-									</a></h3>
-								<time class="published" datetime="2015-10-15">October 15, 2015</time>
-							</header>
-							<a href="single.html" class="image posts">
-								<iframe id="iframe" src="VmgbZqp7DN4"
-									aria-disabled="true" frameborder="0" allowfullscreen></iframe>
-							</a>
-						</article>
-					</li>
-					<li>
-						<article>
-							<header>
-								<h3><a href="single.html">What If Luffy Ate A Logia Devil Fruit as a Child ? || P1
-									</a></h3>
-								<time class="published" datetime="2015-10-10">October 10, 2015</time>
-							</header>
-							<a href="single.html" class="image posts">
-								<iframe id="iframe" src="QEk0VNKw8uY"
-									aria-disabled="true" frameborder="0" allowfullscreen></iframe>
-							</a>
-						</article>
-					</li>
-					<li>
-						<article>
-							<header>
-								<h3><a href="single.html">What if Luffy Ate the Mythical Fruit from Shanks ? || P1
-									</a></h3>
-								<time class="published" datetime="2015-10-08">October 8, 2015</time>
-							</header>
-							<a href="single.html" class="image posts">
-								<iframe id="iframe" src="MD86_GxSB9g"
-									aria-disabled="true" frameborder="0" allowfullscreen></iframe>
-							</a>
-						</article>
-					</li>
-					<li>
-						<article>
-							<header>
-								<h3><a href="single.html">What If Luffy Became the King of Pirates ? || P1
-									</a></h3>
-								<time class="published" datetime="2015-10-06">October 7, 2015</time>
-							</header>
-							<a href="single.html" class="image posts">
-								<iframe id="iframe" src="l3Og4f4pNpM"
-									aria-disabled="true" frameborder="0" allowfullscreen></iframe>
-							</a>
-						</article>
-					</li>
+				<ul class="posts" id="subminipostsContainer">
 				</ul>
 			</section>
 
@@ -206,37 +139,37 @@
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 	<script>
-	 // Array of post data
-	 const postData = [
-	 {
-	   title: "What if Luffy Trained Harder and Big Mom Kidnapped Him? || P3",
-	   author: "The Ghoul AJ",
-	   date: "November 1, 2015",
-	   videoUrl: "mxgThSEZiX4",
-	   description: "They made it! They went all the way to Laugh Tale, and yet, their victory was short-lived...",
-	   likes: 28,
-	   comments: 128
-	 },
-	 {
-	   title: "What If Luffy Learned to Love Again?",
-	   author: "The Ghoul AJ",
-	   date: "October 25, 2015",
-	   videoUrl: "ul9QjRzD72k",
-	   description: "3 Boys, in the same facility, yet viciously ripped away from each other...",
-	   likes: 28,
-	   comments: 128
-	 },
-	 {
-	   title: "What If Luffy Was the Son of the Sea? || Part 3",
-	   author: "Snowy Night",
-	   date: "October 22, 2015",
-	   videoUrl: "4NsuHrIkM5s",
-	   description: "Dragon got more than he bargained for when he made a silent vow to the ocean...",
-	   likes: 28,
-	   comments: 128
-	 }
-	 // Add more post objects as needed
-   ];
+		// Array of post data
+		const postData = [
+			{
+				title: "What if Luffy Trained Harder and Big Mom Kidnapped Him? || P3",
+				author: "The Ghoul AJ",
+				date: "November 1, 2015",
+				videoId: "mxgThSEZiX4",
+				description: "They made it! They went all the way to Laugh Tale, and yet, their victory was short-lived...",
+				likes: 28,
+				comments: 128
+			},
+			{
+				title: "What If Luffy Learned to Love Again?",
+				author: "The Ghoul AJ",
+				date: "October 25, 2015",
+				videoId: "ul9QjRzD72k",
+				description: "3 Boys, in the same facility, yet viciously ripped away from each other...",
+				likes: 28,
+				comments: 128
+			},
+			{
+				title: "What If Luffy Was the Son of the Sea? || Part 3",
+				author: "Snowy Night",
+				date: "October 22, 2015",
+				videoId: "4NsuHrIkM5s",
+				description: "Dragon got more than he bargained for when he made a silent vow to the ocean...",
+				likes: 28,
+				comments: 128
+			}
+			// Add more post objects as needed
+		];
 
 		// Function to create a post element
 		function createPostElement(post) {
@@ -259,7 +192,7 @@
 			  </div>
 			</header>
 			<a href="single.html" class="image featured">
-			  <iframe id="iframe" height="300px" src="https://www.youtube.com/embed/${post.videoUrl}?controls=0" aria-disabled="true" frameborder="0" allowfullscreen></iframe>
+			  <iframe id="iframe" height="300px" src="https://www.youtube.com/embed/${post.videoId}?controls=0" aria-disabled="true" frameborder="0" allowfullscreen></iframe>
 			</a>
 			<p>${post.description}</p>
 			<footer>
@@ -287,36 +220,36 @@
 		});
 
 
-		 // Define an array of mini-posts
-		 const miniPosts = [
-		 {
-		   title: "What if Luffy Trained Harder and Big Mom Kidnapped Him ? || P3",
-		   date: "October 20, 2015",
-		   authorImage: "https://yt3.ggpht.com/PIkrzxr-dzuxjJ7doq9s3gYBmwvm8hnYXyZPtobSjZV0uxnAVvdFy0IE0cqxFNSwOTJCIab6KVg=s68-c-k-c0x00ffffff-no-rj",
-		   videoUrl: "https://www.youtube.com/embed/mxgThSEZiX4?controls=0"
-		 },
-		 {
-		   title: "What If Luffy Had the Power of Two Devil Fruits ? [1k Spacial Series] || P2",
-		   date: "October 19, 2015",
-		   authorImage: "https://yt3.ggpht.com/PIkrzxr-dzuxjJ7doq9s3gYBmwvm8hnYXyZPtobSjZV0uxnAVvdFy0IE0cqxFNSwOTJCIab6KVg=s68-c-k-c0x00ffffff-no-rj",
-		   videoUrl: "https://www.youtube.com/embed/0Bx4zsTiYP0?controls=0"
-		 },
-		 {
-		   title: "What if Luffy Trained Harder and Big Mom Kidnapped Him ? || P4",
-		   date: "October 18, 2015",
-		   authorImage: "https://yt3.ggpht.com/PIkrzxr-dzuxjJ7doq9s3gYBmwvm8hnYXyZPtobSjZV0uxnAVvdFy0IE0cqxFNSwOTJCIab6KVg=s68-c-k-c0x00ffffff-no-rj",
-		   videoUrl: "https://www.youtube.com/embed/eA1VZ2m73Tc?controls=0"
-		 },
-		 {
-		   title: "What If The Strawhat Luffy Went Back In Time travel ? || P2",
-		   date: "October 17, 2015",
-		   authorImage: "https://yt3.ggpht.com/PIkrzxr-dzuxjJ7doq9s3gYBmwvm8hnYXyZPtobSjZV0uxnAVvdFy0IE0cqxFNSwOTJCIab6KVg=s68-c-k-c0x00ffffff-no-rj",
-		   videoUrl: "https://www.youtube.com/embed/R9H-vv0ehCA?controls=0"
-		 }
-	   ];
+		// Define an array of mini-posts
+		const miniPosts = [
+			{
+				title: "What if Luffy Trained Harder and Big Mom Kidnapped Him ? || P3",
+				date: "October 20, 2015",
+				authorImage: "https://yt3.ggpht.com/PIkrzxr-dzuxjJ7doq9s3gYBmwvm8hnYXyZPtobSjZV0uxnAVvdFy0IE0cqxFNSwOTJCIab6KVg=s68-c-k-c0x00ffffff-no-rj",
+				videoId: "mxgThSEZiX4"
+			},
+			{
+				title: "What If Luffy Had the Power of Two Devil Fruits ? [1k Spacial Series] || P2",
+				date: "October 19, 2015",
+				authorImage: "https://yt3.ggpht.com/PIkrzxr-dzuxjJ7doq9s3gYBmwvm8hnYXyZPtobSjZV0uxnAVvdFy0IE0cqxFNSwOTJCIab6KVg=s68-c-k-c0x00ffffff-no-rj",
+				videoId: "0Bx4zsTiYP0"
+			},
+			{
+				title: "What if Luffy Trained Harder and Big Mom Kidnapped Him ? || P4",
+				date: "October 18, 2015",
+				authorImage: "https://yt3.ggpht.com/PIkrzxr-dzuxjJ7doq9s3gYBmwvm8hnYXyZPtobSjZV0uxnAVvdFy0IE0cqxFNSwOTJCIab6KVg=s68-c-k-c0x00ffffff-no-rj",
+				videoId: "eA1VZ2m73Tc"
+			},
+			{
+				title: "What If The Strawhat Luffy Went Back In Time travel ? || P2",
+				date: "October 17, 2015",
+				authorImage: "https://yt3.ggpht.com/PIkrzxr-dzuxjJ7doq9s3gYBmwvm8hnYXyZPtobSjZV0uxnAVvdFy0IE0cqxFNSwOTJCIab6KVg=s68-c-k-c0x00ffffff-no-rj",
+				videoId: "R9H-vv0ehCA"
+			}
+		];
 
 
-	   	// Function to create a post element
+		// Function to create a post element
 		function createMiniPostElement(post) {
 			const minipostElement = document.createElement("article");
 			minipostElement.className = "mini-post";
@@ -331,22 +264,81 @@
 						alt="" /></a>
 			</header>
 			<a href="single.html" class="image">
-				<iframe id="iframe" src="${post.videoUrl}"
+				<iframe id="iframe" src="https://www.youtube.com/embed/${post.videoId}?controls=0"
 					aria-disabled="true" frameborder="0" allowfullscreen></iframe>
 			</a>`
 			return minipostElement;
 		}
 
 
+		// Get the container element to hold the posts
+		const minipostsContainer = document.getElementById("minipostsContainer");
+
+		// Loop through the post data and create post elements dynamically
+		miniPosts.forEach(post => {
+			const postElement = createMiniPostElement(post);
+			minipostsContainer.appendChild(postElement);
+		});
+
+		const subminiPosts = [
+			{
+				title: "What If The Otsutsukis Returned During Naruto's Blank Period ? || P1",
+				date: "October 20, 2015",
+				videoId: "EX9gXUfG12k"
+			},
+			{
+				title: "What if Luffy and Nami Feel Something at Their Two Year Reunion ? || P1",
+				date: "October 15, 2015",
+				videoId: "VmgbZqp7DN4"
+			},
+			{
+				title: "What If Luffy Ate A Logia Devil Fruit as a Child ? || P1",
+				date: "October 10, 2015",
+				videoId: "QEk0VNKw8uY"
+			},
+			{
+				title: "What if Luffy Ate the Mythical Fruit from Shanks ? || P1",
+				date: "October 8, 2015",
+				videoId: "MD86_GxSB9g"
+			},
+			{
+				title: "What If Luffy Became the King of Pirates ? || P1",
+				date: "October 7, 2015",
+				videoId: "l3Og4f4pNpM"
+			}
+		];
+
+		// Function to create a post element
+		function createSubMiniPostElement(post) {
+			const subminipostElement = document.createElement("li");
+
+			// Construct the post HTML using the provided data
+			subminipostElement.innerHTML = `
+				<article>
+					<header>
+						<h3><a href="single.html">${post.title}
+							</a></h3>
+						<time class="published" datetime="2015-10-06">${post.date}</time>
+					</header>
+					<a href="single.html" class="image posts">
+						<iframe id="iframe" src="https://www.youtube.com/embed/${post.videoId}?controls=0" aria-disabled="true" frameborder="0"
+							allowfullscreen></iframe>
+					</a>
+				</article>
+				`
+			return subminipostElement;
+		}
+
+
 			// Get the container element to hold the posts
-			const minipostsContainer = document.getElementById("minipostsContainer");
+			const subminipostsContainer = document.getElementById("subminipostsContainer");
 
 			// Loop through the post data and create post elements dynamically
-			miniPosts.forEach(post => {
-				const postElement = createMiniPostElement(post);
-				minipostsContainer.appendChild(postElement);
+			subminiPosts.forEach(post => {
+				const subpostElement = createSubMiniPostElement(post);
+				subminipostsContainer.appendChild(subpostElement);
+				console.log(subpostElement)
 			});
-	
 
 	</script>
 </body>
