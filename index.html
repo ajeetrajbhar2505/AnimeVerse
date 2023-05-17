@@ -18,7 +18,7 @@
 			<h1><a href="index.html">AnimeVerse</a></h1>
 			<nav class="links">
 				<ul>
-					<li><a href="single.html">Home</a></li>
+					<li><a href="index.html">Home</a></li>
 					<!-- <li><a href="single.html">Browse</a></li>  -->
 					<!-- <li><a href="single.html">Watchlist</a></li> -->
 					<!-- <li><a href="single.html">Community</a></li> -->
@@ -112,20 +112,20 @@
 					characters.
 				</p>
 				<ul class="actions">
-					<li><a href="single.html" class="button">Learn More</a></li>
+					<li><a href="#" class="button">Learn More</a></li>
 				</ul>
 			</section>
 
 			<!-- Footer -->
 			<section id="footer">
 				<ul class="icons">
-					<li><a href="single.html" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-					<li><a href="single.html" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a>
+					<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a>
 					</li>
-					<li><a href="single.html" class="icon brands fa-instagram"><span class="label">Instagram</span></a>
+					<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a>
 					</li>
-					<li><a href="single.html" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
-					<li><a href="single.html" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+					<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+					<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
 				</ul>
 
 			</section>
@@ -412,6 +412,14 @@
 			});
 		}
 
+		function scrollToTop() {
+			// For modern browsers
+			document.documentElement.scrollTop = 0;
+			
+			// For older browsers
+			document.body.scrollTop = 0;
+		  }
+
 		
 		
 		// Function to handle next page click
@@ -422,6 +430,7 @@
 				renderPosts();
 			}
 			previousButtonVisible()
+			scrollToTop()
 		}
 
 		function previousButtonVisible() {
@@ -441,6 +450,7 @@
 				renderPosts();
 			}
 			previousButtonVisible()
+			scrollToTop()
 
 		}
 
