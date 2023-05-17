@@ -68,8 +68,8 @@
 
 			<!-- Pagination -->
 			<ul class="actions pagination">
-				<li><a href="" class="disabled button large previous">Previous Page</a></li>
-				<li><a href="single.html" class="button large next">Next Page</a></li>
+				<li><a onclick="handlePreviousPage()" id="previouspageId" class="disabled button large previous">Previous Page</a></li>
+				<li><a  onclick="handleNextPage()" class="button large next">Next Page</a></li>
 			</ul>
 
 		</div>
@@ -120,8 +120,10 @@
 			<section id="footer">
 				<ul class="icons">
 					<li><a href="single.html" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-					<li><a href="single.html" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-					<li><a href="single.html" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="single.html" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a>
+					</li>
+					<li><a href="single.html" class="icon brands fa-instagram"><span class="label">Instagram</span></a>
+					</li>
 					<li><a href="single.html" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
 					<li><a href="single.html" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
 				</ul>
@@ -161,6 +163,34 @@
 				date: "October 22, 2015",
 				videoId: "4NsuHrIkM5s",
 				description: "Dragon got more than he bargained for when he made a silent vow to the ocean...",
+			},
+			{
+				title: "What if Luffy Trained Harder and Big Mom Kidnapped Him ? || P3",
+				date: "October 20, 2015",
+				author: "",
+				videoId: "mxgThSEZiX4",
+				description: ''
+			},
+			{
+				title: "What If Luffy Had the Power of Two Devil Fruits ? [1k Spacial Series] || P2",
+				date: "October 19, 2015",
+				author: "",
+				videoId: "0Bx4zsTiYP0",
+				description: ''
+			},
+			{
+				title: "What if Luffy Trained Harder and Big Mom Kidnapped Him ? || P4",
+				date: "October 18, 2015",
+				author: "",
+				videoId: "eA1VZ2m73Tc",
+				description: ''
+			},
+			{
+				title: "What If The Strawhat Luffy Went Back In Time travel ? || P2",
+				date: "October 17, 2015",
+				author: "",
+				videoId: "R9H-vv0ehCA",
+				description: ''
 			}
 			// Add more post objects as needed
 		];
@@ -362,6 +392,60 @@
 			localStorage.setItem("watchVideo", videoDataJSON);
 		}
 
+
+
+		const postsPerPage = 4; // Number of posts to show per page
+		let currentPage = 1; // Current page
+
+		// Function to render the posts for the current page
+		function renderPosts() {
+			const startIndex = (currentPage - 1) * postsPerPage;
+			const endIndex = startIndex + postsPerPage;
+			const currentPosts = postData.slice(startIndex, endIndex);
+
+			const postsContainer = document.getElementById("postsContainer");
+			postsContainer.innerHTML = ""; // Clear previous posts
+
+			currentPosts.forEach((post) => {
+				const postElement = createPostElement(post);
+				postsContainer.appendChild(postElement);
+			});
+		}
+
+		
+		
+		// Function to handle next page click
+		function handleNextPage() {
+			const totalPages = Math.ceil(postData.length / postsPerPage);
+			if (currentPage < totalPages) {
+				currentPage++;
+				renderPosts();
+			}
+			previousButtonVisible()
+		}
+
+		function previousButtonVisible() {
+			const previouspageId = document.getElementById('previouspageId');
+
+			if (currentPage !== 1) {
+				previouspageId.classList.remove("disabled");
+			} else {
+				previouspageId.classList.add("disabled");
+			}
+		}
+
+		// Function to handle previous page click
+		function handlePreviousPage() {
+			if (currentPage > 1) {
+				currentPage--;
+				renderPosts();
+			}
+			previousButtonVisible()
+
+		}
+
+		// Initial rendering of posts
+		renderPosts();
 
 	</script>
 </body>
