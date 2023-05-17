@@ -21,14 +21,14 @@
 		<!-- Header -->
 		<header id="header">
 			<h1><a href="index.html">AnimeVerse</a></h1>
-				<nav class="links">
-					<ul>
-						<li><a href="index.html">Home</a></li>
-						<!-- <li><a href="#">Browse</a></li> -->
-						<!-- <li><a href="#">Watchlist</a></li> -->
-						<!-- <li><a href="#">Community</a></li> -->
-					</ul>
-				</nav>
+			<nav class="links">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<!-- <li><a href="#">Browse</a></li> -->
+					<!-- <li><a href="#">Watchlist</a></li> -->
+					<!-- <li><a href="#">Community</a></li> -->
+				</ul>
+			</nav>
 		</header>
 
 		<!-- Menu -->
@@ -84,42 +84,7 @@
 		<div id="main">
 
 			<!-- Post -->
-			<article class="post">
-				<header>
-					<div class="title">
-						<h2><a href="#">What if Luffy Trained Harder and Big Mom Kidnapped Him ? || P4</a></h2>
-						<p>Author Of the Story :- The Ghoul AJ</p>
-					</div>
-					<div class="meta">
-						<time class="published" datetime="2015-11-01">November 1, 2015</time>
-						<a href="#" class="author"><span class="name">Fantastic WhatIf</span><img
-							src="https://yt3.ggpht.com/PIkrzxr-dzuxjJ7doq9s3gYBmwvm8hnYXyZPtobSjZV0uxnAVvdFy0IE0cqxFNSwOTJCIab6KVg=s68-c-k-c0x00ffffff-no-rj"
-							alt="" /></a>
-					</div>
-				</header>
-				<span class="image featured">
-					<iframe id="youtubePlayer" height="400px" src="https://www.youtube.com/embed/mxgThSEZiX4"
-						aria-disabled="true" frameborder="0" allowfullscreen></iframe>
-				</span>
-				<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod
-					placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non
-					congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta
-					lectus vitae, ultricies congue gravida diam non fringilla.</p>
-				<p>Nunc quis dui scelerisque, scelerisque urna ut, dapibus orci. Sed vitae condimentum lectus, ut
-					imperdiet quam. Maecenas in justo ut nulla aliquam sodales vel at ligula. Sed blandit diam odio, sed
-					fringilla lectus molestie sit amet. Praesent eu tortor viverra lorem mattis pulvinar feugiat in
-					turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-					Fusce ullamcorper tellus sit amet mattis dignissim. Phasellus ut metus ligula. Curabitur nec leo
-					turpis. Ut gravida purus quis erat pretium, sed pellentesque massa elementum. Fusce vestibulum porta
-					augue, at mattis justo. Integer sed sapien fringilla, dapibus risus id, faucibus ante. Pellentesque
-					mattis nunc sit amet tortor pellentesque, non placerat neque viverra. </p>
-				<footer>
-					<ul class="stats">
-						<li><a href="#">General</a></li>
-						<li><a href="#" class="icon solid fa-heart">28</a></li>
-						<li><a href="#" class="icon solid fa-comment">128</a></li>
-					</ul>
-				</footer>
+			<article class="post" id="videoDataContainer">
 			</article>
 
 		</div>
@@ -145,6 +110,40 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
+	<script>
+		const videoDataJSON = localStorage.getItem("watchVideo");
+
+		// Parse the JSON string back into an object
+		const videoData = JSON.parse(videoDataJSON);
+		const videoDataContainer = document.getElementById("videoDataContainer");
+		// Set the content of the container element with the video data
+		videoDataContainer.innerHTML = `
+		<header>
+			<div class="title">
+				<h2><a href="#">${videoData.title}</h2>
+				<p>${videoData.author}</p>
+			</div>
+			<div class="meta">
+				<time class="published" datetime="2015-11-01">${videoData.date}</time>
+				<a href="#" class="author"><span class="name">Fantastic WhatIf</span><img
+						src="https://yt3.ggpht.com/PIkrzxr-dzuxjJ7doq9s3gYBmwvm8hnYXyZPtobSjZV0uxnAVvdFy0IE0cqxFNSwOTJCIab6KVg=s68-c-k-c0x00ffffff-no-rj"
+						alt="" /></a>
+			</div>
+		</header>
+		<span class="image featured">
+			<iframe id="iframe" height="400px" src="https://www.youtube.com/embed/${videoData.videoId}?controls=0" aria-disabled="true" frameborder="0" allowfullscreen></iframe>
+		</span>
+		<p>${videoData.description}</p>
+		<footer>
+			<ul class="stats">
+				<li><a href="#">General</a></li>
+				<li><a href="#" class="icon solid fa-heart">28</a></li>
+				<li><a href="#" class="icon solid fa-comment">128</a></li>
+			</ul>
+		</footer>
+		`;
+		console.log(videoData)
+	</script>
 
 </body>
 
